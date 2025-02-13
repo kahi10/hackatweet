@@ -1,4 +1,7 @@
-import styles from '../styles/Login.module.css';
+import styles from "../styles/Login.module.css";
+import Signin from "./SignIn";
+import Signup from "./SignUp";
+
 
 function Home() {
   return (
