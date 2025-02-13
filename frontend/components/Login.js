@@ -20,9 +20,9 @@ function Login() {
             See what's <br></br>happening
           </h1>
           <h4 className={styles.titre2}>Join Hackatweet today.</h4>
-          <Signin></Signin>
-          <p className={styles.loginP}>Already have an account?</p>
           <Signup></Signup>
+          <p className={styles.loginP}>Already have an account?</p>
+          <Signin></Signin>
         </div>
       </main>
     </div>
