@@ -1,12 +1,20 @@
-import styles from '../styles/Home.module.css';
+import styles from "../styles/Home.module.css";
+import Login from "../components/Login";
+import Signin from "./SignIn";
+import Signup from "./SignUp";
+
 
 function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <div>
+     <img className={styles.homeImg} src="/twitter_bg.png" alt="imgHome"></img>
+      </div>
+      <div className={styles.homeRightPart}>
+        <img className={styles.logo} src="logo_twitter.png" alt="logo"></img>
+      </div>
+
       </main>
     </div>
   );
