@@ -1,8 +1,4 @@
-import styles from "../styles/Home.module.css";
-import Login from "../components/Login";
-import Signin from "./SignIn";
-import Signup from "./SignUp";
-
+import styles from '../styles/Login.module.css';
 
 function Home() {
   return (
@@ -23,4 +19,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Login;
