@@ -13,6 +13,9 @@ function Home() {
       </div>
       <div className={styles.homeRightPart}>
         <img className={styles.logo} src="logo_twitter.png" alt="logo"></img>
+        <h1 className={styles.titre}>See what's <br></br>happening</h1>
+        <h4 className={styles.titre2}>Join Hackatweet today.</h4>
+        
       </div>
 
       </main>

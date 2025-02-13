@@ -1,8 +1,28 @@
 .main{
   background-color: #152238;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
 }
 
 .homeImg{
   height: 100vh;
   width: 44vw;
 }
+.logo{
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.titre{
+  color: white;
+  font-size: 70px;
+  margin-left: 20px;
+}
+.titre2{
+  color:white;
+  font-size: 30px;
+  margin-left: 20px;
+}
+
