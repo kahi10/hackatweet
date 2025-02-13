@@ -15,4 +15,14 @@
     background-color: #2980b9;
     transform: scale(1.05); 
   }
-    
+
+  .logo{
+    height: 30px;
+    width: 30px;
+  }
+
+ .modalContent{
+    background-color: #152238;
+    height: 500px;
+    width: 500px;
+ }
