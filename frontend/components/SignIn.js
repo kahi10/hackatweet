@@ -14,7 +14,6 @@ function Signin() {
   const router = useRouter()
 
   const dispatch = useDispatch();
-  //const signin = useSelector((state) => state.signin.value);
   const [isSigninModalOpen, setIsSigninModalOpen] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -39,7 +38,7 @@ function Signin() {
       .then((data) => {
         if (data.result) {
           console.log(data.result);
-          dispatch(login({firstname: data.user.firstname, username: username,token:data.user.token}));
+          dispatch(login({firstname: data.user.firstname, username: data.user.username,token:data.user.token}));
           router.push("/home");
           setUsername("");
           setPassword("");
