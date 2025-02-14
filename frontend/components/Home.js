@@ -40,6 +40,7 @@ function Home() {
       </div>
       <div className={styles.homeSection}>
         <h1>Home</h1>
+        <Tweet></Tweet>
       </div>
       <div className={styles.trendsSection}></div>
       <Trends></Trends>
