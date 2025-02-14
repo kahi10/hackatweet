@@ -57,12 +57,21 @@ router.get("/hashtag/:nomHashtag", function (req, res) {
 
 //afficher les compteurs de hastag sur trends
 router.get("/hashtag", (req, res) => {
-
+  let tweetsObject;
   Tweet.find({ contenu: { $regex: new RegExp('#\\b',"i") } })
     .then((tweets) => {
-      res.json({ result: true, tweets: tweets });
-  
-      
+      if (tweets) {
+        for (let i = 0; i < tweets.length; i++) {
+          if (tweetsObject[tweets[i]]) {
+            tweetsObject[tweets[i]] += 1;
+          } else {
+            tweetsObject[tweets[i]] = 1;
+          }
+        }
+        res.json({ result: true, tweets: tweetsObject });
+      } else {
+        res.json({ result: false, error: "No hashtag found" });
+      }
     })
 });
 

@@ -2,7 +2,7 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-//import Tweet from "./Tweet";
+import Tweet from "./Tweet";
 import Trends from "./Trends";
 
 function Home() {
