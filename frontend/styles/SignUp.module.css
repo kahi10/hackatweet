@@ -1,20 +1,18 @@
-.buttonSignUp{
-    background-color: #3498db;
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 50px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    margin-left:20px;
-
+.modalContent {
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
   }
-
-
-
-  .buttonSignUp:hover {
-    background-color: #2980b9;
-    transform: scale(1.05); 
-    cursor: pointer;
-}
+  
+  .logosuperpose {
+    width: 50px; /* Taille réduite */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    background-color: black;
+  }
+  
+  .bagroundModal {
+    background-color: black !important;
+  }
