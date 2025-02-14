@@ -7,6 +7,7 @@ function Home() {
     <div>
       <h1>Hello word</h1>
     </div>
+
   );
 }
 
