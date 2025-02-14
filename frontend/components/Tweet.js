@@ -19,11 +19,11 @@ const handleSubmit = () => {
  return (
    <div>
      <main className={styles.main}>
-       <h1 className={styles.title}> Home  
+       <h1 className={styles.title}> 
        </h1>
-       <input className={styles.message} onChange={handlechange} value={message} maxlength="280"/>
+       <input className={styles.message} onChange={handlechange} value={message} maxlength="280" placeholder="What's up"/>
        <p>{count}/280</p>
-       <button onClick={() => handleSubmit()}>Tweet</button>
+       <button className={styles.button} onClick={() => handleSubmit()}>Tweet</button>
      </main>
    </div>
  );
