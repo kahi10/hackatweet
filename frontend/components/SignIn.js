@@ -3,12 +3,15 @@ import { useState } from "react";
 import { Modal, Button } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../reducers/users';
+import { useRouter } from 'next/router';
 
 
 
 
 
 function Signin() {
+
+  const router = useRouter()
 
   const dispatch = useDispatch();
   //const signin = useSelector((state) => state.signin.value);
@@ -37,6 +40,7 @@ function Signin() {
         if (data.result) {
           console.log(data);
           dispatch(login({ username: username, password:password }));
+          router.push("/home");
           setUsername("");
           setPassword("");
         }

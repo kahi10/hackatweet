@@ -1,13 +1,14 @@
 import styles from '../styles/SignUp.module.css';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-//import { useDispatch} from 'react-redux';
+import { useDispatch} from 'react-redux';
+import { login } from '../reducers/users'
 
 //import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Space } from 'antd';
 
 function Signup() {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const router = useRouter()
 
   const [firstname, setFirstname] = useState(''); 
@@ -32,7 +33,7 @@ function Signup() {
 		}).then(response => response.json())
 		.then(data => {
 			if (data.result) {
-        //dispatch(login({username: signUpUsername, token: data.token}));
+        dispatch(login({firstname: firstname, username: username}));
         router.push("/home");
       }
     });
