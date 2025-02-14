@@ -1,15 +1,15 @@
 .buttonSignIn{
-    background-color:  #152238;
-    color: white; 
-    padding: 10px 20px; 
-    border: solid white; 
-    border-radius: 50px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 20px;
+  background-color:  #152238;
+  color: white; 
+  padding: 10px 20px; 
+  border: solid white; 
+  border-radius: 50px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 20px;
 
-  }
+}
 
   .buttonSignIn:hover {
     background-color: #2980b9;
