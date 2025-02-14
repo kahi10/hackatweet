@@ -39,7 +39,7 @@ function Signin() {
       .then((data) => {
         if (data.result) {
           console.log(data.result);
-          dispatch(login({firstname: data.user.firstname, username: username}));
+          dispatch(login({firstname: data.user.firstname, username: username,token:data.user.token}));
           router.push("/home");
           setUsername("");
           setPassword("");

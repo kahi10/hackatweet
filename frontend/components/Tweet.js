@@ -1,9 +1,13 @@
 import styles from "../styles/Tweet.module.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function Tweet() {
   const [tweet, setTweet] = useState("");
   const [count, setCount] = useState();
+
+  const user= useSelector((state) => state.users); 
+  console.log(user);
 
 
   const handleChange = (e) => {
@@ -24,11 +28,12 @@ function Tweet() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           contenu: tweet,
-          createPerson: createPerson,
+          createPerson: user.token,
         }),
       })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.result) {
           setTweet("");
           setCount(0); 
