@@ -2,7 +2,7 @@ import styles from "../styles/signin.module.css";
 import { useState } from "react";
 import { Modal, Button } from "antd";
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../reducers/signin';
+import { login } from '../reducers/users';
 
 
 //const signin = useSelector((state) => state.signin.value);
@@ -20,6 +20,9 @@ function Signin() {
     setIsSigninModalOpen(true);
   };
 
+  const handleCancel = () => setIsSigninModalOpen(false);
+
+
   const handleConnection = () => {
     fetch("http://localhost:3000/users/signin", {
       method: "POST",
@@ -32,6 +35,7 @@ function Signin() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
+          console.log(data);
           dispatch(login({ username: username, password:password }));
           setUsername("");
           setPassword("");
@@ -51,12 +55,15 @@ function Signin() {
       <Modal
         title=""
         open={isSigninModalOpen}
+        onCancel={handleCancel}
+        closable={false}
         footer={null}
-        className="modalContent"
+        className={styles.modalContent}
       >
         <div className={styles.modalContent}>
           <img className={styles.logo} src="logo_twitter.png" alt="logo" />
           <p>Connect to Hackatweet</p>
+          <span className={styles.close} onClick={handleCancel}>✖</span>
           <input
             type="name"
             placeholder="Enter your Username"
