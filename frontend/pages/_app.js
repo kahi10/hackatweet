@@ -16,7 +16,7 @@ function App({ Component, pageProps }) {
         <title></title>
       </Head>
       <Component {...pageProps} />
-    </Provider>
+      </Provider>
   );
 }
 
