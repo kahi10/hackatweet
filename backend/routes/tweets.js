@@ -4,8 +4,7 @@ const fetch = require("node-fetch");
 const Tweet = require("../models/tweets");
 const { checkBody } = require("../modules/checkBody");
 
-
-// poster le tweet par l'utlisateur 
+// poster le tweet par l'utlisateur
 router.post("/", (req, res) => {
   if (!checkBody(req.body, ["contenu", "createPerson"])) {
     console.log("Empty");
@@ -20,25 +19,21 @@ router.post("/", (req, res) => {
   });
   newTweet
     .save()
-    .then(
-      (savedTweet) => savedTweet.populate(["createPerson", "likePerson"]) 
-    )
+    .then((savedTweet) => savedTweet.populate(["createPerson", "likePerson"]))
     .then((populatedTweet) => {
       res.json({ result: true, tweet: populatedTweet });
     });
 });
 
-
-//afficher toutes les tweets des utlisateurs 
+//afficher toutes les tweets des utlisateurs
 router.get("/", (req, res) => {
   Tweet.find()
     .populate("createPerson")
-    .populate("likePerson")   
+    .populate("likePerson")
     .then((tweets) => {
       res.json({ result: true, tweets: tweets });
-    })
+    });
 });
-
 
 //trouver tous les  tweet avec son #nom de hashtag
 router.get("/hashtag/:nomHashtag", function (req, res) {
@@ -60,32 +55,44 @@ router.get("/hashtag/:nomHashtag", function (req, res) {
   });
 });
 
+//afficher les compteurs de hastag sur trends
+router.get("/hashtag", (req, res) => {
 
+  Tweet.find({ contenu: { $regex: new RegExp('#\\b',"i") } })
+    .then((tweets) => {
+      //res.json({ result: true, tweets: tweets });
+      if (tweets) {
+        if (tweets.includes())
+      }
+    })
+});
 
-//supprimer les tweet de l'utilisateur 
-  router.delete("/", (req, res) => {
-    if (!checkBody(req.body, ["userName", "dateTweet"])) {
-      res.json({ result: false, error: "Missing tweet ID or user ID" });
-      return;
-    }
+//supprimer les tweet de l'utilisateur
+router.delete("/", (req, res) => {
+  if (!checkBody(req.body, ["userName", "dateTweet"])) {
+    res.json({ result: false, error: "Missing tweet ID or user ID" });
+    return;
+  }
 
-    const dateTweet = new Date(req.body.dateTweet)// la date de saisir à modifier 
+  const dateTweet = new Date(req.body.dateTweet); // la date de saisir à modifier
 
-    Tweet.findOne({ date: { $regex: new RegExp(`^${dateTweet}`, "i") } } ).then((tweet) => {
+  Tweet.findOne({ date: { $regex: new RegExp(`^${dateTweet}`, "i") } }).then(
+    (tweet) => {
       if (!tweet) {
         res.json({ result: false, error: "Tweet not found" });
         return;
       }
 
-      if (tweet.createPerson!== req.body.userName) {
+      if (tweet.createPerson !== req.body.userName) {
         res.json({ result: false, error: " You can't delete this tweet" });
         return;
       }
 
-      Tweet.deleteOne({ _id: tweet._id}).then(() => {
+      Tweet.deleteOne({ _id: tweet._id }).then(() => {
         res.json({ result: true, message: "Tweet deleted successfully" });
       });
-    });
-  });
+    }
+  );
+});
 
 module.exports = router;
