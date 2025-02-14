@@ -1,20 +1,70 @@
-.main{
-    background-color: black;
-}
-
-.message{
+/* General container for the tweets */
+.tweetsContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #152238;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title style */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input message area */
+  .message {
+    background-color: #152238;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: solid white;
+    border-radius: 4px;
+    outline: none;
+    resize: none;
+    min-height: 100px; /* To make the input larger */
+    margin-bottom: 10px;
+  }
+  
+  .message:focus {
+    border-color: #007bff; /* Blue color when focused */
+  }
+  
+  /* Container for the Tweet button and character count */
+  .buttontweet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Character count style */
+  .buttontweet p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Tweet button style */
+  .buttontweet button {
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
-
-}
-
-.tweet{
-    background-color: #3498db;
-    color: white; 
-    padding: 10px 20px; 
-    border: none; 
-    border-radius: 50px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s ease, transform 0.2s ease; 
-    margin-left:20px;
-}
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .buttontweet button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .buttontweet button:focus {
+    outline: none;
+  }
+  

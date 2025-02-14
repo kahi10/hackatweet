@@ -1,0 +1,56 @@
+.homePage {
+    background-color: rgb(21, 29, 39);
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    color: white;
+}
+
+.userSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+
+.bottomStyle {
+    margin-bottom: 30px;
+}
+
+.avatarAndUserInfos {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.userInfos {
+    font-size: 15px;
+}
+
+.logo {
+    margin-top: 30px;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.firstname {
+    font-weight: bold; 
+}
+
+.username {
+    color: rgb(106, 118, 131);
+}
+
+.logoutButton {
+    background-color: rgb(21, 29, 39);
+    border-radius:5px;
+    color: rgb(106, 118, 131);
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
