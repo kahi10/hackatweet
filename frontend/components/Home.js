@@ -5,7 +5,7 @@ import Login from "./Login";
 function Home() {
   return (
     <div>
-        <Login />;
+      <h1>Hello word</h1>
     </div>
   );
 }
