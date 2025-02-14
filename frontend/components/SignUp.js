@@ -35,6 +35,9 @@ function Signup() {
 			if (data.result) {
         dispatch(login({firstname: firstname, username: username}));
         router.push("/home");
+        setFirstname("");
+        setUsername("");
+        setPassword("");
       }
     });
   }
