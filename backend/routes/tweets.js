@@ -60,10 +60,9 @@ router.get("/hashtag", (req, res) => {
 
   Tweet.find({ contenu: { $regex: new RegExp('#\\b',"i") } })
     .then((tweets) => {
-      //res.json({ result: true, tweets: tweets });
-      if (tweets) {
-        if (tweets.includes())
-      }
+      res.json({ result: true, tweets: tweets });
+  
+      
     })
 });
 
