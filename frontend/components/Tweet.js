@@ -1,32 +1,59 @@
-import styles from '../styles/Tweet.module.css';
-import { useState } from 'react';
+import styles from "../styles/Tweet.module.css";
+import { useState } from "react";
 
 function Tweet() {
-const [message, setMessage] = useState('');
-const [count, setCount] = useState();
+  const [tweet, setTweet] = useState("");
+  const [count, setCount] = useState();
 
-const handleSubmit = () => {
-    console.log(message);
+
+  const handleChange = (e) => {
+    setTweet(e.target.value);
+    setCount(e.target.value.length); 
   };
-   const handlechange = (e) => {
-    setMessage(e.target.value);
-    setCount(message.length)
-   }
-
- console.log(count)
 
 
- return (
-   <div>
-     <main className={styles.main}>
-       <h1 className={styles.title}> 
-       </h1>
-       <input className={styles.message} onChange={handlechange} value={message} maxlength="280" placeholder="What's up"/>
-       <p>{count}/280</p>
-       <button className={styles.button} onClick={() => handleSubmit()}>Tweet</button>
-     </main>
-   </div>
- );
+  const handleSubmit = () => {
+
+    if (tweet.trim().length === 0) {
+      alert("Tweet cannot be empty!");
+      return;
+    }
+
+      fetch("http://localhost:3000/tweets/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contenu: tweet,
+          createPerson: createPerson,
+        }),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          setTweet("");
+          setCount(0); 
+        }
+      })
+    };
+
+  return (
+    <div>
+      <div className={styles.tweetsContainer}>
+        <h1 className={styles.title}></h1>
+        <input
+          className={styles.message}
+          onChange={handleChange}
+          maxlength="280"
+          placeholder="What's up?"/>
+        <div className={styles.buttontweet}>
+          <p>{count}/280</p>
+          <button className={styles.buttontweet} onClick={handleSubmit}>
+            Tweet
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Tweet;

@@ -7,3 +7,14 @@
     color: white;
     padding-left: 20px;
 }
+
+.divTrend{
+    color: white;
+    border: solid gray;
+    width: 95%;
+}
+
+.hashtagCount{
+
+    color: gray;
+}
