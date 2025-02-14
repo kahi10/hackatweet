@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
+import Trends from "./Trends";
 
 function Home() {
   const [firstName, setFirstName] = useState('');
@@ -28,6 +29,8 @@ function Home() {
         <h1>Home</h1>
       </div>
       <div className={styles.trendsSection}></div>
+      <Trends></Trends>
+
     </div>
   );
 }
