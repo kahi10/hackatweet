@@ -2,8 +2,7 @@ import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
-import Tweet from "./Tweet";
-import { useSelector } from 'react-redux';
+//import Tweet from "./Tweet";
 import Trends from "./Trends";
 
 function Home() {
@@ -41,7 +40,6 @@ function Home() {
       </div>
       <div className={styles.homeSection}>
         <h1>Home</h1>
-        <Tweet></Tweet>
       </div>
       <div className={styles.trendsSection}></div>
       <Trends></Trends>
