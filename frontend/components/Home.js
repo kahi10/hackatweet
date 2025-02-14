@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import Tweet from "./Tweet";
-import { useSelector } from 'react-redux';
 import Trends from "./Trends";
 
 function Home() {
