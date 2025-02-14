@@ -1,4 +1,4 @@
-import styles from '../styles/Tweet.module.css';
+//import styles from '../styles/Tweet.module.css';
 import { useState } from 'react';
 
 function Tweet() {

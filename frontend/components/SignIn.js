@@ -38,8 +38,7 @@ function Signin() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
-          console.log(data);
-          dispatch(login({ username: username, password:password }));
+          dispatch(login({firstname: data.user.firstname, username: username}));
           router.push("/home");
           setUsername("");
           setPassword("");
